@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Réalisation 3 — Migration Cisco vers HPE Aruba | Elena Zivojnov</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-dot"></span>
+      Elena Zivojnov <small>portfolio</small>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html#moi">Moi</a>
+      <a href="index.html#cv">CV</a>
+      <a href="index.html#certifications">Certifications</a>
+      <a href="index.html#portfolio">Projets</a>
+      <a href="index.html#entreprise">Entreprises</a>
+      <a href="index.html#e5" class="active">E5</a>
+      <a href="index.html#e6">E6</a>
+      <a href="veille.html">Veille</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- EN-TÊTE DE LA RÉALISATION -->
+  <div class="wrap">
+    <a class="crumb" href="index.html#e5">← Retour aux réalisations E5</a>
+
+    <section class="page-hero">
+      <p class="eyebrow">E5 · Réalisation 3 · Dassault Falcon Service</p>
+      <h1>Migration des switchs Cisco vers HPE Aruba</h1>
+      <p class="lead">
+        Je participe au remplacement de tous les switchs Cisco du site par des switchs
+        HPE Aruba : documentation du réseau dans phpIPAM, migration des ports des
+        utilisateurs sans interrompre leur travail et réinitialisation des anciens switchs.
+      </p>
+
+      <div class="facts">
+        <div class="fact"><span class="k">Période</span><span class="v">Septembre – décembre 2026</span></div>
+        <div class="fact"><span class="k">Cadre</span><span class="v">Projet d'équipe · avec mon tuteur</span></div>
+        <div class="fact"><span class="k">Outils</span><span class="v">phpIPAM · HPE IMC · PuTTY</span></div>
+        <div class="fact"><span class="k">Statut</span><span class="v"><span class="status">Projet en cours</span></span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 1 · CONTEXTE -->
+  <section class="section" id="contexte">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <div><h2>Contexte</h2><p>L'organisation, son infrastructure et les acteurs concernés.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>L'organisation</h3>
+          <p>
+            <strong>Dassault Falcon Service</strong> est une filiale de Dassault Aviation
+            spécialisée dans la maintenance et les services autour des avions d'affaires Falcon.
+            J'effectue mon alternance au sein du service informatique du site du Bourget.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>L'infrastructure existante</h3>
+          <ul class="clean-list">
+            <li>Switchs <strong>Cisco Catalyst 2960 et 3650</strong>, remplacés par des switchs <strong>HPE Aruba 6200 et 8100</strong></li>
+            <li>Réseau géré et supervisé avec <strong>HPE IMC</strong></li>
+            <li>Plan d'adressage IP <strong>en cours de refonte</strong></li>
+            <li>VLANs et adresses IP jusqu'ici suivis dans un <strong>fichier Excel</strong></li>
+          </ul>
+        </article>
+
+        <article class="card span-12">
+          <h3>Les acteurs</h3>
+          <ul class="clean-list">
+            <li><strong>Mon tuteur</strong> — pilote la migration et réalise avec moi le changement des ports</li>
+            <li><strong>Moi (alternante)</strong> — documentation dans phpIPAM, migration des ports, réinitialisation des anciens switchs</li>
+            <li><strong>Les utilisateurs</strong> — leur poste change de switch : ils ne doivent pas être gênés dans leur travail</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · BESOIN -->
+  <section class="section" id="besoin">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <div><h2>Expression du besoin</h2><p>Les objectifs du projet.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-4">
+          <h3>Documenter le réseau</h3>
+          <p>Remplacer le fichier Excel par un outil centralisé, <strong>phpIPAM</strong>, pour retrouver rapidement un VLAN, un sous-réseau ou une adresse IP.</p>
+        </article>
+        <article class="card span-4">
+          <h3>Migrer sans interruption</h3>
+          <p>Basculer chaque utilisateur d'un port Cisco vers un port Aruba <strong>sans couper son travail</strong>.</p>
+        </article>
+        <article class="card span-4">
+          <h3>Retirer les anciens switchs</h3>
+          <p>Remettre les switchs Cisco en <strong>configuration d'usine</strong> avant leur retrait, pour qu'ils ne contiennent plus aucune information sur le réseau.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · RÉPONSE AU BESOIN -->
+  <section class="section" id="reponse">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div><h2>Réponse au besoin</h2><p>Démarche, justification, étapes, tests et résultat.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <h3>Démarche : un projet en trois volets</h3>
+          <div class="chain" role="img" aria-label="Trois volets du projet : documenter dans phpIPAM, migrer les ports, réinitialiser les anciens switchs">
+            <div class="zone me">
+              <span class="zone-label">Volet 1</span>
+              <div class="node">Documenter<small>phpIPAM</small></div>
+            </div>
+            <span class="arrow" style="align-self:center; padding:0 8px;">→</span>
+            <div class="zone me">
+              <span class="zone-label">Volet 2</span>
+              <div class="node">Migrer les ports<small>Cisco → Aruba</small></div>
+            </div>
+            <span class="arrow" style="align-self:center; padding:0 8px;">→</span>
+            <div class="zone ext">
+              <span class="zone-label">Volet 3</span>
+              <div class="node warn">Réinitialiser<small>anciens switchs Cisco</small></div>
+            </div>
+          </div>
+          <p class="muted">Organisation du projet — schéma réalisé par moi.</p>
+        </article>
+
+        <article class="card span-12">
+          <h3>Pourquoi ces choix</h3>
+          <ul class="clean-list">
+            <li><strong>phpIPAM plutôt qu'Excel :</strong> un outil centralisé et partagé par toute l'équipe, qui évite les doublons d'adresses et permet de rechercher une IP ou un VLAN en quelques secondes.</li>
+            <li><strong>HPE IMC pour préparer la migration :</strong> il montre quel équipement est branché sur quel port du switch Cisco, ce qui permet de savoir où le rebrancher sur le switch Aruba.</li>
+            <li><strong>Migration pendant la pause déjeuner :</strong> le poste est débranché quand l'utilisateur est absent, donc aucune interruption de son travail.</li>
+            <li><strong>Réinitialisation avant retrait :</strong> un ancien switch contient la configuration du réseau (VLANs, adresses, mots de passe). L'effacer protège ces informations.</li>
+            <li><strong>Supprimer aussi <code>vlan.dat</code> :</strong> sur un switch Cisco, les VLANs sont enregistrés dans ce fichier, séparément de la configuration. Effacer seulement la configuration ne suffit pas.</li>
+            <li><strong>Connexion par câble console :</strong> elle fonctionne quelle que soit la configuration réseau du switch.</li>
+          </ul>
+        </article>
+
+        <article class="card span-4">
+          <h3>Volet 1 — phpIPAM</h3>
+          <ol class="steps">
+            <li><strong>Source</strong>Reprise du fichier Excel contenant les VLANs et les adresses IP.</li>
+            <li><strong>Création</strong>Saisie des VLANs, des sous-réseaux et des adresses dans phpIPAM.</li>
+            <li><strong>Classement</strong>Rangement dans des dossiers selon l'usage (utilisateurs, autres équipements).</li>
+          </ol>
+        </article>
+
+        <article class="card span-4">
+          <h3>Volet 2 — Migration des ports</h3>
+          <ol class="steps">
+            <li><strong>Repérage</strong>Identification dans HPE IMC du port Cisco utilisé par chaque poste.</li>
+            <li><strong>Créneau</strong>Intervention pendant la pause déjeuner, en l'absence de l'utilisateur.</li>
+            <li><strong>Bascule</strong>Rebranchement du poste sur le port Aruba prévu, avec mon tuteur.</li>
+            <li><strong>Contrôle</strong>Vérification du port dans HPE IMC.</li>
+          </ol>
+        </article>
+
+        <article class="card span-4">
+          <h3>Volet 3 — Réinitialisation</h3>
+          <ol class="steps">
+            <li><strong>Port COM</strong>Repérage du port série du câble console dans le Gestionnaire de périphériques Windows.</li>
+            <li><strong>Connexion</strong>Ouverture d'une session série avec PuTTY sur ce port COM.</li>
+            <li><strong>Inventaire</strong>Liste des fichiers avec <code>dir flash:</code>.</li>
+            <li><strong>Suppression</strong>Effacement des fichiers de configuration et de <code>vlan.dat</code>.</li>
+            <li><strong>Contrôle</strong>Nouveau <code>dir flash:</code> pour vérifier qu'ils ont disparu.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>Tests réalisés</h3>
+          <ul class="clean-list">
+            <li><strong>Migration :</strong> après chaque bascule, le port du switch Aruba est contrôlé dans HPE IMC.</li>
+            <li><strong>Réinitialisation :</strong> la commande <code>dir flash:</code> confirme que les fichiers de configuration et <code>vlan.dat</code> ont bien été supprimés.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Résultat</h3>
+          <p>
+            Les premiers utilisateurs travaillent sur les nouveaux switchs Aruba sans avoir subi
+            d'interruption. Les switchs Cisco réinitialisés peuvent être retirés sans risque.
+            Les premiers VLANs du nouveau plan d'adressage sont documentés dans phpIPAM.
+          </p>
+          <p class="muted">Le projet est en cours : les chiffres ci-dessous seront mis à jour.</p>
+        </article>
+      </div>
+
+      <div class="stats" style="margin-top:16px;">
+        <div class="stat"><div class="num">5</div><div class="lbl">utilisateurs migrés vers Aruba</div></div>
+        <div class="stat"><div class="num">5 / 10</div><div class="lbl">switchs Cisco réinitialisés (5 prévus la semaine suivante)</div></div>
+        <div class="stat"><div class="num">3</div><div class="lbl">VLANs documentés dans phpIPAM (plan d'adressage en refonte)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · COMPÉTENCES -->
+  <section class="section" id="competences">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <div><h2>Compétences mobilisées</h2><p>Bloc 1 — Support et mise à disposition de services informatiques.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="comp">
+            <div class="comp-title">Travailler en mode projet</div>
+            <ul>
+              <li>Analyser les objectifs et les modalités d'organisation d'un projet — trois volets</li>
+              <li>Planifier les activités — créneaux de pause déjeuner, switchs par lot</li>
+              <li>Évaluer les indicateurs de suivi d'un projet — utilisateurs migrés, switchs réinitialisés</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="comp">
+            <div class="comp-title">Gérer le patrimoine informatique</div>
+            <ul>
+              <li>Recenser et identifier les ressources numériques — VLANs et adresses dans phpIPAM</li>
+              <li>Vérifier les conditions de la continuité d'un service informatique — migration sans interruption</li>
+              <li>Mettre en place et vérifier les niveaux d'habilitation — effacement des configurations avant retrait</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PREUVES -->
+  <section class="section" id="preuves">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <div><h2>Preuves</h2><p>Documents produits pendant la mission.</p></div>
+      </div>
+
+      <p class="note" style="margin:0 0 16px;">
+        Pour des raisons de confidentialité, l'entreprise interdit les photos et les captures
+        d'écran de son réseau. Les preuves présentées ici sont des documents que j'ai produits
+        moi-même, sans aucune donnée interne.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Procédure de réinitialisation d'un switch Cisco</h3>
+          <p>Commandes utilisées depuis la console (session série PuTTY) :</p>
+<pre style="margin:0; padding:14px 16px; background:rgba(0,0,0,0.3); border:1px solid var(--line); border-radius:10px; font-family:var(--mono); font-size:13px; color:var(--ink-soft); overflow-x:auto;">dir flash:
+delete flash:config.text
+delete flash:private-config.text
+delete flash:vlan.dat
+dir flash:</pre>
+        </article>
+        <article class="card">
+          <h3>Organisation du projet</h3>
+          <p>Le schéma des trois volets et les étapes détaillées de chaque volet (section <a class="link" href="#reponse"><strong>Réponse au besoin</strong></a>) décrivent la méthode suivie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BILAN -->
+  <section class="section" id="bilan">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <div><h2>Bilan</h2><p>Ce que cette mission m'a appris.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <ul class="clean-list">
+            <li>Participer à un <strong>projet d'infrastructure réel</strong>, mené en plusieurs volets et sur plusieurs mois.</li>
+            <li>Organiser une intervention pour <strong>ne pas gêner les utilisateurs</strong>.</li>
+            <li>Comprendre où un switch Cisco enregistre sa configuration et ses VLANs, et <strong>comment l'effacer proprement</strong>.</li>
+            <li>L'intérêt d'un <strong>outil de gestion des adresses IP</strong> par rapport à un simple fichier Excel.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pager" style="margin-top:24px;">
+        <a class="btn" href="e5-2.html">← Réalisation 2</a>
+        <a class="btn btn-primary" href="index.html#e5">Toutes les réalisations</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 · Elena Zivojnov · <a href="mentions-legales.html">Mentions légales</a></span>
+    <span>elenazivojnov@gmail.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

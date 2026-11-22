@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veille technologique — L'IA et les virus polymorphes | Elena Zivojnov</title>
+<meta name="description" content="Veille technologique BTS SIO : l'intelligence artificielle et les virus polymorphes." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-dot"></span>
+      Elena Zivojnov <small>portfolio</small>
+    </a>
+    <nav class="menu" aria-label="Navigation de la veille">
+      <a href="index.html">Accueil</a>
+      <a href="#strategie">Stratégie</a>
+      <a href="#definitions">Définitions</a>
+      <a href="#historique">Historique</a>
+      <a href="#impacts">Impacts</a>
+      <a href="#enjeux">Enjeux</a>
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#synthese">Synthèse</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <a class="crumb" href="index.html#veille">← Retour au portfolio</a>
+
+    <section class="page-hero">
+      <p class="eyebrow">Veille technologique · Cybersécurité</p>
+      <h1>L'intelligence artificielle et les virus polymorphes</h1>
+      <p class="lead">
+        Problématique : <strong>comment l'intelligence artificielle contribue-t-elle à
+        l'augmentation des virus polymorphes, et comment la défense s'adapte-t-elle ?</strong>
+      </p>
+
+      <div class="facts">
+        <div class="fact"><span class="k">Lien avec l'option</span><span class="v">Sécurité des réseaux et des systèmes</span></div>
+        <div class="fact"><span class="k">Fréquence</span><span class="v">Chaque semaine</span></div>
+        <div class="fact"><span class="k">Outils</span><span class="v">Feedly · Google Alertes · Notion</span></div>
+        <div class="fact"><span class="k">Mise à jour</span><span class="v">Novembre 2026</span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 01 · STRATÉGIE DE VEILLE -->
+  <section class="section" id="strategie">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <div><h2>Stratégie de veille</h2><p>Mes sources, mes outils et mon organisation.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-4">
+          <h3>Sources</h3>
+          <ul class="clean-list">
+            <li><strong>Institutions</strong> · ANSSI, CERT-FR, NCSC (Royaume-Uni), Commission européenne</li>
+            <li><strong>Éditeurs de sécurité</strong> · Google Threat Intelligence, CrowdStrike, Unit 42</li>
+            <li><strong>Presse spécialisée</strong> · The Hacker News, BleepingComputer</li>
+            <li><strong>Réseau professionnel</strong> · LinkedIn (ANSSI, experts cybersécurité)</li>
+          </ul>
+        </article>
+
+        <article class="card span-4">
+          <h3>Outils</h3>
+          <ul class="clean-list">
+            <li><strong>Feedly</strong> · agrégateur qui regroupe les flux RSS de mes sources</li>
+            <li><strong>Google Alertes</strong> · « malware polymorphe », « IA malware », « PROMPTFLUX »</li>
+            <li><strong>Notion</strong> · archivage de chaque article : date, source, résumé, mots-clés</li>
+          </ul>
+        </article>
+
+        <article class="card span-4">
+          <h3>Organisation</h3>
+          <ul class="clean-list">
+            <li><strong>Chaque semaine</strong> · lecture des nouveaux articles dans Feedly</li>
+            <li><strong>Au fil de l'eau</strong> · lecture des Google Alertes reçues par e-mail</li>
+            <li><strong>Chaque mois</strong> · mise à jour de cette page avec les évolutions importantes</li>
+            <li><strong>Vérification</strong> · une information est recoupée avec une source officielle avant d'être retenue</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · DÉFINITIONS -->
+  <section class="section" id="definitions">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <div><h2>Définitions</h2><p>Les notions de base du sujet.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-4">
+          <h3>Intelligence artificielle</h3>
+          <p>Systèmes capables d'analyser des données, d'apprendre et de prendre des décisions automatiquement (<strong>machine learning</strong>, <strong>deep learning</strong>, modèles de langage).</p>
+        </article>
+        <article class="card span-4">
+          <h3>Virus polymorphe</h3>
+          <p>Malware qui <strong>modifie son code à chaque infection</strong>, souvent grâce au chiffrement et à une routine de déchiffrement qui change, pour que sa signature soit toujours différente.</p>
+        </article>
+        <article class="card span-4">
+          <h3>Lien avec le réseau</h3>
+          <p>L'IA est utilisée pour <strong>automatiser des attaques réseau</strong> et contourner les protections, mais aussi pour <strong>analyser le trafic</strong> et détecter les comportements anormaux.</p>
+        </article>
+
+        <article class="card">
+          <h3>Caractéristiques des virus polymorphes</h3>
+          <ul class="clean-list">
+            <li>Mutation du code à chaque infection</li>
+            <li>Utilisation du chiffrement pour masquer le code</li>
+            <li>Fonction identique malgré un code différent</li>
+            <li>Difficiles à détecter par signature</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Ce que l'IA ajoute côté attaque</h3>
+          <ul class="clean-list">
+            <li>Génération automatique de nouvelles variantes</li>
+            <li>Réécriture du code pendant l'exécution du malware</li>
+            <li>Adaptation à l'environnement de la victime</li>
+            <li>Analyse des défenses avant l'attaque</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · HISTORIQUE -->
+  <section class="section" id="historique">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div><h2>Historique</h2><p>Les grandes étapes des deux sujets.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Les virus polymorphes</h3>
+          <div class="timeline">
+            <div class="tl"><span class="tl-date">1987</span><span class="tl-text"><strong>Cascade</strong>, premier virus chiffré. Sa routine de déchiffrement reste identique, les antivirus le détectent donc facilement : c'est l'ancêtre des virus polymorphes.</span></div>
+            <div class="tl"><span class="tl-date">1990</span><span class="tl-text"><strong>1260 (famille Chameleon)</strong> de Mark Washburn, premier virus polymorphe : son code change à chaque infection.</span></div>
+            <div class="tl"><span class="tl-date">2007</span><span class="tl-text"><strong>Storm Worm</strong>, propagé par des campagnes d'e-mails massives avec des variantes renouvelées très fréquemment.</span></div>
+            <div class="tl"><span class="tl-date">2025</span><span class="tl-text"><strong>PROMPTFLUX</strong>, premier malware connu qui utilise un modèle de langage pour réécrire son propre code.</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>L'intelligence artificielle</h3>
+          <div class="timeline">
+            <div class="tl"><span class="tl-date">1943</span><span class="tl-text">Premier modèle de neurone artificiel (McCulloch et Pitts).</span></div>
+            <div class="tl"><span class="tl-date">1950</span><span class="tl-text">Alan Turing pose la question « les machines peuvent-elles penser ? ».</span></div>
+            <div class="tl"><span class="tl-date">1956</span><span class="tl-text">Le terme « intelligence artificielle » apparaît à la conférence de Dartmouth.</span></div>
+            <div class="tl"><span class="tl-date">1997</span><span class="tl-text">Deep Blue (IBM) bat Garry Kasparov aux échecs.</span></div>
+            <div class="tl"><span class="tl-date">2012</span><span class="tl-text">Essor du deep learning grâce à la puissance de calcul et aux données.</span></div>
+            <div class="tl"><span class="tl-date">2020–2023</span><span class="tl-text">Démocratisation de l'IA générative (GPT-3, ChatGPT, GPT-4).</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · IMPACTS -->
+  <section class="section" id="impacts">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <div><h2>Impacts</h2><p>Ce que l'IA change pour l'attaque et pour la défense.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>La détection par signature devient insuffisante</h3>
+          <p>
+            Un antivirus classique compare les fichiers à des <strong>signatures</strong> (par
+            exemple une empreinte calculée sur un virus connu). Si le malware change de code
+            à chaque infection, sa signature change aussi : la comparaison ne fonctionne plus.
+          </p>
+          <p>
+            Avec l'IA, un attaquant peut aller plus loin : générer une variante
+            <strong>adaptée à chaque victime</strong> (système, activité, environnement),
+            jamais vue auparavant.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>La réponse : l'analyse comportementale</h3>
+          <p>
+            Côté défense, l'IA permet de repérer une menace à <strong>ce qu'elle fait</strong>
+            plutôt qu'à son apparence : connexions inhabituelles, chiffrement massif de
+            fichiers, accès anormaux.
+          </p>
+          <p>
+            Les virus polymorphes jouent ainsi un rôle de <strong>moteur d'innovation</strong> :
+            ils obligent la cybersécurité à développer des protections plus intelligentes.
+          </p>
+        </article>
+
+        <article class="card span-12">
+          <div class="prc">
+            <div class="def">
+              <h4>▲ L'IA côté défense</h4>
+              <ul>
+                <li>Détection plus rapide grâce à l'apprentissage automatique</li>
+                <li>Analyse de millions d'événements réseau en temps réel</li>
+                <li>Réponse automatique : blocage d'une IP, isolement d'un poste</li>
+                <li>Modèles mis à jour selon les attaques récentes</li>
+              </ul>
+            </div>
+            <div class="att">
+              <h4>▼ L'IA côté attaque</h4>
+              <ul>
+                <li>Malwares qui réécrivent leur code en continu</li>
+                <li>Hameçonnage automatisé et personnalisé à grande échelle</li>
+                <li>Contournement des protections par signature</li>
+                <li>Outils accessibles à des attaquants peu expérimentés</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · ENJEUX -->
+  <section class="section" id="enjeux">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <div><h2>Enjeux</h2><p>Techniques, juridiques, économiques, géopolitiques et humains.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Infrastructures critiques</h3>
+          <ul class="clean-list">
+            <li>Hôpitaux, centrales électriques, réseaux d'eau, datacenters</li>
+            <li>Une attaque peut avoir des conséquences physiques et humaines</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Enjeux juridiques</h3>
+          <ul class="clean-list">
+            <li>Protection des données personnelles (RGPD)</li>
+            <li>Encadrement européen de l'IA (AI Act)</li>
+            <li>Question ouverte : si une IA de défense échoue, qui est responsable ?</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Enjeux économiques</h3>
+          <ul class="clean-list">
+            <li>Coût d'une cyberattaque : arrêt d'activité, perte de données, réputation</li>
+            <li>Investissements nécessaires : outils de défense, experts</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Enjeux géopolitiques et humains</h3>
+          <ul class="clean-list">
+            <li>Cyberguerre, espionnage industriel, sabotage</li>
+            <li>Manque d'experts en cybersécurité</li>
+            <li>Dépendance croissante aux systèmes automatisés</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · NOUVEAUTÉS -->
+  <section class="section" id="nouveautes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <div><h2>Les dernières évolutions</h2><p>Ce que j'ai relevé entre novembre 2025 et novembre 2026.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <div class="timeline">
+            <div class="tl"><span class="tl-date">Nov. 2025</span><span class="tl-text"><strong>PROMPTFLUX</strong> (Google Threat Intelligence Group) : malware expérimental en VBScript qui interroge le modèle Gemini pour obtenir une nouvelle version de son propre code et échapper aux antivirus. Il s'agit encore d'une preuve de concept. Le même rapport décrit d'autres malwares utilisant un modèle de langage pendant leur exécution, comme PROMPTSTEAL.</span></div>
+            <div class="tl"><span class="tl-date">2026</span><span class="tl-text"><strong>JavaScript polymorphe</strong> : des scripts malveillants régénérés par l'IA à chaque visite d'un site. Chaque version est différente pour un scanner, mais le vol de données reste le même.</span></div>
+            <div class="tl"><span class="tl-date">Mai 2026</span><span class="tl-text">Google Threat Intelligence signale pour la première fois un <strong>exploit « zero-day »</strong> qui aurait été développé avec l'aide de l'IA.</span></div>
+            <div class="tl"><span class="tl-date">Juin 2026</span><span class="tl-text">L'<strong>ANSSI</strong> confirme qu'à partir de 2027, la cryptographie post-quantique deviendra une obligation pour qualifier certains produits de sécurité, face aux attaques « collecter maintenant, déchiffrer plus tard ».</span></div>
+            <div class="tl"><span class="tl-date">Juil. 2026</span><span class="tl-text"><strong>AI Act</strong> : le paquet « Omnibus numérique » est adopté. Les obligations pour les systèmes d'IA à haut risque sont reportées au <strong>2 décembre 2027</strong>.</span></div>
+            <div class="tl"><span class="tl-date">Nov. 2026</span><span class="tl-text">Le <strong>NCSC</strong> britannique publie une évaluation de la menace jusqu'en 2028, construite sur trois scénarios : dans tous les cas, la menace liée à l'IA augmente.</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Prévisions pour 2027</h3>
+          <ul class="clean-list">
+            <li><strong>Gartner</strong> prévoit que 17 % des cyberattaques et fuites de données impliqueront l'IA générative d'ici 2027.</li>
+            <li>Selon le <strong>NCSC</strong>, d'ici 2027 l'IA rendra surtout les techniques d'attaque existantes plus efficaces, plutôt que d'en créer de nouvelles.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>À retenir</h3>
+          <ul class="clean-list">
+            <li>L'IA rend les malwares polymorphes plus rapides, plus discrets et plus autonomes.</li>
+            <li>2025 : premier malware qui se réécrit grâce à un modèle de langage.</li>
+            <li>La défense mise sur le comportement plutôt que sur la signature.</li>
+            <li>Les réponses réglementaires se mettent en place (AI Act, ANSSI).</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · SYNTHÈSE -->
+  <section class="section" id="synthese">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <div><h2>Synthèse et analyse personnelle</h2><p>Ce que je retiens de cette veille.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <p>
+            L'IA agit comme un <strong>accélérateur à double tranchant</strong>. Côté attaque,
+            elle industrialise le polymorphisme : le code mute en continu, et depuis
+            PROMPTFLUX, il peut même se réécrire seul. La détection par signature devient
+            donc de moins en moins suffisante. Côté défense, la même technologie permet une
+            détection <strong>comportementale</strong>, capable de repérer une menace inconnue
+            à partir de ce qu'elle fait.
+          </p>
+          <p>
+            La question n'est donc plus de savoir si l'IA aide davantage les attaquants ou les
+            défenseurs, mais <strong>qui saura l'exploiter le plus vite</strong>. Les
+            prévisions pour 2027 et les réponses réglementaires (AI Act, exigences de l'ANSSI)
+            montrent que la course est autant stratégique que technologique.
+          </p>
+          <p>
+            En tant que future technicienne réseau, j'en retiens qu'il faut combiner plusieurs
+            protections : un antivirus seul ne suffit plus, la <strong>supervision du réseau</strong>
+            et l'analyse des comportements anormaux deviennent essentielles.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · SOURCES -->
+  <section class="section" id="sources">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">08</span>
+        <div><h2>Sources</h2><p>Classées de la plus récente à la plus ancienne.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <ul class="sources">
+            <li><span class="date">11/2026</span><a href="https://ncsc.gov.uk/report/artificial-intelligence-and-cyber-intrusion" target="_blank" rel="noreferrer">NCSC — Artificial intelligence and cyber intrusion ↗</a></li>
+            <li><span class="date">29/07/2026</span><a href="https://www.orrick.com/en/Insights/2026/05/EUs-Digital-Omnibus-on-AI-7-Key-Changes-You-Need-to-Know" target="_blank" rel="noreferrer">Orrick — EU AI Act : les changements du Digital Omnibus ↗</a></li>
+            <li><span class="date">08/2026</span><a href="https://cyber.gouv.fr/enjeux-technologiques/cryptographie-post-quantique/faq-pqc/" target="_blank" rel="noreferrer">ANSSI — FAQ sur la cryptographie post-quantique ↗</a></li>
+            <li><span class="date">11/05/2026</span><a href="https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access" target="_blank" rel="noreferrer">Google Threat Intelligence — AI Threat Tracker, mai 2026 ↗</a></li>
+            <li><span class="date">21/02/2026</span><a href="https://www.forbes.com/sites/chuckbrooks/2026/02/21/ai-polymorphic-threats-are-forcing-a-rethink-of-cybersecurity/" target="_blank" rel="noreferrer">Forbes — AI polymorphic threats are forcing a rethink of cybersecurity ↗</a></li>
+            <li><span class="date">2026</span><a href="https://www.reflectiz.com/blog/polymorphic-javascript-ai-threat-defense/" target="_blank" rel="noreferrer">Reflectiz — Polymorphic JavaScript: the new AI-driven weapon ↗</a></li>
+            <li><span class="date">05/11/2025</span><a href="https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools" target="_blank" rel="noreferrer">Google Threat Intelligence — AI Threat Tracker : PROMPTFLUX ↗</a></li>
+            <li><span class="date">16/10/2025</span><a href="https://cyber.gouv.fr/actualites/premiers-visas-de-securite-incluant-de-la-cryptographie-post-quantique" target="_blank" rel="noreferrer">ANSSI — Premiers visas de sécurité incluant de la cryptographie post-quantique ↗</a></li>
+            <li><span class="date">05/2025</span><a href="https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027" target="_blank" rel="noreferrer">NCSC — Impact of AI on cyber threat from now to 2027 ↗</a></li>
+            <li><span class="date">28/08/2024</span><a href="https://www.gartner.com/en/newsroom/press-releases/2024-08-28-gartner-forecasts-global-information-security-spending-to-grow-15-percent-in-2025" target="_blank" rel="noreferrer">Gartner — prévision : 17 % des cyberattaques impliqueront l'IA générative d'ici 2027 ↗</a></li>
+            <li><span class="date">consulté 11/2026</span><a href="https://www.crowdstrike.com/fr-fr/cybersecurity-101/malware/polymorphic-virus/" target="_blank" rel="noreferrer">CrowdStrike — Qu'est-ce qu'un virus polymorphe ? ↗</a></li>
+            <li><span class="date">consulté 11/2026</span><a href="https://encyclopedia.kaspersky.com/knowledge/year-1990/" target="_blank" rel="noreferrer">Kaspersky Encyclopedia — histoire des virus (1987–1990) ↗</a></li>
+            <li><span class="date">consulté 11/2026</span><a href="https://www.wizishop.fr/blog/histoire-intelligence-artificielle" target="_blank" rel="noreferrer">WiziShop — histoire de l'intelligence artificielle ↗</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 · Elena Zivojnov · <a href="mentions-legales.html">Mentions légales</a></span>
+    <span><a href="mailto:elenazivojnov@gmail.com">elenazivojnov@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

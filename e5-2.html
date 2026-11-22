@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Réalisation 2 — Flotte mobile BlackBerry | Elena Zivojnov</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-dot"></span>
+      Elena Zivojnov <small>portfolio</small>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html#moi">Moi</a>
+      <a href="index.html#cv">CV</a>
+      <a href="index.html#certifications">Certifications</a>
+      <a href="index.html#portfolio">Projets</a>
+      <a href="index.html#entreprise">Entreprises</a>
+      <a href="index.html#e5" class="active">E5</a>
+      <a href="index.html#e6">E6</a>
+      <a href="veille.html">Veille</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- EN-TÊTE DE LA RÉALISATION -->
+  <div class="wrap">
+    <a class="crumb" href="index.html#e5">← Retour aux réalisations E5</a>
+
+    <section class="page-hero">
+      <p class="eyebrow">E5 · Réalisation 2 · Dassault Falcon Service</p>
+      <h1>Gestion de la flotte mobile BlackBerry UEM</h1>
+      <p class="lead">
+        J'ai audité les appareils enregistrés dans BlackBerry UEM pour repérer ceux qui
+        occupaient une licence sans être utilisés, et j'accompagne les utilisateurs dans
+        l'installation de BlackBerry sur leur iPhone professionnel.
+      </p>
+
+      <div class="facts">
+        <div class="fact"><span class="k">Période</span><span class="v">Depuis septembre 2026</span></div>
+        <div class="fact"><span class="k">Cadre</span><span class="v">Alternance · Service informatique</span></div>
+        <div class="fact"><span class="k">Outils</span><span class="v">BlackBerry UEM · GLPI · iPhone</span></div>
+        <div class="fact"><span class="k">Statut</span><span class="v"><span class="status">Mission continue</span></span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 1 · CONTEXTE -->
+  <section class="section" id="contexte">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <div><h2>Contexte</h2><p>L'organisation, son infrastructure et les acteurs concernés.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>L'organisation</h3>
+          <p>
+            <strong>Dassault Falcon Service</strong> est une filiale de Dassault Aviation
+            spécialisée dans la maintenance et les services autour des avions d'affaires Falcon.
+            J'effectue mon alternance au sein du service informatique du site du Bourget.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>L'infrastructure existante</h3>
+          <ul class="clean-list">
+            <li>Téléphones professionnels (iPhone) gérés avec <strong>BlackBerry UEM</strong>, une solution de gestion des terminaux mobiles (MDM)</li>
+            <li>Chaque appareil enregistré <strong>consomme une licence</strong></li>
+            <li><strong>GLPI</strong> sert de référence pour le parc et les utilisateurs</li>
+          </ul>
+        </article>
+
+        <article class="card span-12">
+          <h3>Les acteurs</h3>
+          <ul class="clean-list">
+            <li><strong>Les utilisateurs</strong> — collaborateurs équipés d'un iPhone professionnel</li>
+            <li><strong>Moi (alternante)</strong> — audit des appareils et des licences, accompagnement des utilisateurs</li>
+            <li><strong>Mon tuteur</strong> — m'a confié la mission et a rédigé la procédure interne d'installation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · BESOIN -->
+  <section class="section" id="besoin">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <div><h2>Expression du besoin</h2><p>Les problèmes à résoudre.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Des licences occupées inutilement</h3>
+          <p>
+            Lorsqu'un collaborateur quitte l'entreprise, son appareil reste souvent enregistré
+            dans BlackBerry UEM. Il <strong>consomme une licence pour rien</strong> et reste
+            rattaché à un compte qui ne devrait plus avoir accès aux services de l'entreprise.
+          </p>
+          <p>Il faut vérifier que toutes les licences sont à jour et que chaque appareil est encore utilisé.</p>
+        </article>
+        <article class="card">
+          <h3>Des utilisateurs à accompagner</h3>
+          <p>
+            L'installation de BlackBerry sur iPhone suit un protocole précis. Les utilisateurs
+            ont besoin d'aide pour le suivre jusqu'au bout et <strong>accéder à leur messagerie
+            professionnelle</strong> sur leur téléphone.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · RÉPONSE AU BESOIN -->
+  <section class="section" id="reponse">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div><h2>Réponse au besoin</h2><p>Démarche, justification, étapes, tests et résultat.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <h3>Démarche : deux critères pour décider qu'un appareil est inutilisé</h3>
+          <p>
+            Pour chaque appareil, je croise l'information de BlackBerry UEM avec celle de GLPI.
+            Un appareil n'est considéré comme inutilisé que si les deux critères le confirment.
+          </p>
+
+          <div class="chain" role="img" aria-label="Arbre de décision : appareil dans la console, dernière connexion ancienne, collaborateur parti selon GLPI, appareil inutilisé">
+            <div class="zone me">
+              <span class="zone-label">BlackBerry UEM</span>
+              <div class="node">Appareil enregistré</div>
+              <span class="arrow">→</span>
+              <div class="node">Dernière connexion<small>ancienne ?</small></div>
+            </div>
+            <span class="arrow" style="align-self:center; padding:0 8px;">oui →</span>
+            <div class="zone me">
+              <span class="zone-label">GLPI</span>
+              <div class="node">Collaborateur<small>parti de l'entreprise ?</small></div>
+            </div>
+            <span class="arrow" style="align-self:center; padding:0 8px;">oui →</span>
+            <div class="zone ext">
+              <span class="zone-label">Conclusion</span>
+              <div class="node warn">Appareil inutilisé<small>licence à libérer</small></div>
+            </div>
+          </div>
+          <p class="muted">Si l'un des deux critères n'est pas rempli, l'appareil est conservé. Schéma réalisé par moi.</p>
+        </article>
+
+        <article class="card">
+          <h3>Pourquoi cette solution</h3>
+          <ul class="clean-list">
+            <li>
+              <strong>Un seul critère ne suffit pas.</strong> Un appareil peut ne pas se
+              connecter pendant un moment (congés, absence) alors que son utilisateur est
+              toujours dans l'entreprise. Croiser avec GLPI évite de retirer un appareil encore utile.
+            </li>
+            <li>
+              <strong>Enjeu financier :</strong> chaque licence a un coût ; libérer les licences
+              inutilisées évite d'en acheter de nouvelles.
+            </li>
+            <li>
+              <strong>Enjeu de sécurité :</strong> un appareil rattaché à un ancien collaborateur
+              ne doit plus avoir accès aux données de l'entreprise.
+            </li>
+            <li>
+              <strong>Suivre la procédure interne</strong> pour l'installation garantit une
+              configuration identique et conforme sur chaque iPhone.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Étapes — audit des licences</h3>
+          <ol class="steps">
+            <li><strong>Inventaire</strong>Consultation de la liste des appareils et des licences dans la console BlackBerry UEM.</li>
+            <li><strong>Premier critère</strong>Repérage des appareils dont la dernière connexion est ancienne.</li>
+            <li><strong>Second critère</strong>Vérification dans GLPI : le collaborateur fait-il toujours partie de l'entreprise ?</li>
+            <li><strong>Identification</strong>Liste des appareils inutilisés dont la licence peut être libérée.</li>
+          </ol>
+        </article>
+
+        <article class="card span-12">
+          <h3>Étapes — accompagnement des utilisateurs sur iPhone</h3>
+          <!-- À compléter : détailler ici les grandes étapes de la procédure d'installation -->
+          <ol class="steps">
+            <li><strong>Prise en charge de la demande</strong>L'utilisateur a besoin de BlackBerry sur son iPhone professionnel.</li>
+            <li><strong>Application de la procédure interne</strong>J'accompagne l'utilisateur étape par étape en suivant le protocole d'installation rédigé par mon tuteur.</li>
+            <li><strong>Vérification</strong>Contrôle de l'accès de l'utilisateur à sa messagerie professionnelle depuis son iPhone.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>Tests réalisés</h3>
+          <ul class="clean-list">
+            <li><strong>Installation :</strong> l'installation est validée lorsque l'utilisateur accède à ses mails professionnels depuis son iPhone.</li>
+            <li><strong>Audit :</strong> chaque appareil considéré comme inutilisé a été vérifié selon les deux critères (dernière connexion et présence dans GLPI).</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Résultat</h3>
+          <p>
+            L'équipe dispose d'une liste fiable des appareils inutilisés, ce qui permet de
+            libérer des licences et de retirer l'accès aux appareils d'anciens collaborateurs.
+            Les utilisateurs accompagnés ont accès à leur messagerie sur iPhone.
+          </p>
+        </article>
+      </div>
+
+      <div class="stats two" style="margin-top:16px;">
+        <div class="stat"><div class="num">5</div><div class="lbl">appareils inutilisés identifiés</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">utilisateurs accompagnés sur iPhone</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · COMPÉTENCES -->
+  <section class="section" id="competences">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <div><h2>Compétences mobilisées</h2><p>Bloc 1 — Support et mise à disposition de services informatiques.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="comp">
+            <div class="comp-title">Gérer le patrimoine informatique</div>
+            <ul>
+              <li>Recenser et identifier les ressources numériques — inventaire des appareils et des licences</li>
+              <li>Mettre en place et vérifier les niveaux d'habilitation associés à un service — appareils d'anciens collaborateurs</li>
+              <li>Vérifier le respect des règles d'utilisation des ressources numériques</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="comp">
+            <div class="comp-title">Mettre à disposition des utilisateurs un service informatique</div>
+            <ul>
+              <li>Déployer un service — installation de BlackBerry sur iPhone</li>
+              <li>Accompagner les utilisateurs dans la mise en place d'un service</li>
+            </ul>
+          </div>
+          <div class="comp">
+            <div class="comp-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+            <ul>
+              <li>Traiter des demandes concernant les applications</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PREUVES -->
+  <section class="section" id="preuves">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <div><h2>Preuves</h2><p>Documents produits pendant la mission.</p></div>
+      </div>
+
+      <p class="note" style="margin:0 0 16px;">
+        Pour des raisons de confidentialité, l'entreprise interdit les photos et les captures
+        d'écran de ses outils. La procédure d'installation est un document interne rédigé par
+        mon tuteur : elle n'est pas publiée ici.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Méthode d'audit des licences</h3>
+          <p>Le schéma des deux critères (section <a class="link" href="#reponse"><strong>Réponse au besoin</strong></a>) décrit la méthode que j'applique à chaque appareil.</p>
+        </article>
+        <article class="card">
+          <h3>Étapes de l'audit</h3>
+          <p>Les étapes détaillées ci-dessus constituent ma procédure de vérification, réutilisable à chaque nouvel audit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BILAN -->
+  <section class="section" id="bilan">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <div><h2>Bilan</h2><p>Ce que cette mission m'a appris.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <ul class="clean-list">
+            <li>Le rôle d'un <strong>MDM</strong> : gérer et sécuriser une flotte de téléphones professionnels.</li>
+            <li>Une licence inutilisée est à la fois un <strong>coût</strong> et un <strong>risque de sécurité</strong>.</li>
+            <li><strong>Croiser plusieurs sources</strong> (console UEM et GLPI) avant de prendre une décision.</li>
+            <li>Accompagner un utilisateur en suivant une <strong>procédure</strong>, pour un résultat identique à chaque fois.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pager" style="margin-top:24px;">
+        <a class="btn" href="e5-1.html">← Réalisation 1</a>
+        <a class="btn btn-primary" href="e5-3.html">Réalisation 3 →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 · Elena Zivojnov · <a href="mentions-legales.html">Mentions légales</a></span>
+    <span>elenazivojnov@gmail.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

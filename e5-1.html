@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Réalisation 1 — Diagnostic des postes lents | Elena Zivojnov</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-dot"></span>
+      Elena Zivojnov <small>portfolio</small>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html#moi">Moi</a>
+      <a href="index.html#cv">CV</a>
+      <a href="index.html#certifications">Certifications</a>
+      <a href="index.html#portfolio">Projets</a>
+      <a href="index.html#entreprise">Entreprises</a>
+      <a href="index.html#e5" class="active">E5</a>
+      <a href="index.html#e6">E6</a>
+      <a href="veille.html">Veille</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- EN-TÊTE DE LA RÉALISATION -->
+  <div class="wrap">
+    <a class="crumb" href="index.html#e5">← Retour aux réalisations E5</a>
+
+    <section class="page-hero">
+      <p class="eyebrow">E5 · Réalisation 1 · Dassault Falcon Service</p>
+      <h1>Diagnostic des postes lents et audit du câblage réseau</h1>
+      <p class="lead">
+        À partir d'un ticket utilisateur signalant un PC très lent, j'ai identifié un câble
+        réseau trop ancien. Mon tuteur m'a ensuite confié l'audit de tous les postes lents
+        du site afin de distinguer les problèmes physiques des autres causes.
+      </p>
+
+      <div class="facts">
+        <div class="fact"><span class="k">Période</span><span class="v">Octobre – novembre 2026</span></div>
+        <div class="fact"><span class="k">Cadre</span><span class="v">Alternance · Service informatique</span></div>
+        <div class="fact"><span class="k">Outils</span><span class="v">GLPI · HPE IMC · Windows</span></div>
+        <div class="fact"><span class="k">Statut</span><span class="v"><span class="status">Audit en cours</span></span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 1 · CONTEXTE -->
+  <section class="section" id="contexte">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <div><h2>Contexte</h2><p>L'organisation, son infrastructure et les acteurs concernés.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>L'organisation</h3>
+          <p>
+            <strong>Dassault Falcon Service</strong> est une filiale de Dassault Aviation
+            spécialisée dans la maintenance et les services autour des avions d'affaires Falcon.
+            J'effectue mon alternance au sein du service informatique du site du Bourget.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>L'infrastructure existante</h3>
+          <ul class="clean-list">
+            <li>Réseau de switchs Cisco en cours de remplacement par du <strong>HPE Aruba</strong></li>
+            <li>Équipements réseau gérés et supervisés avec <strong>HPE IMC</strong></li>
+            <li>Débit prévu par utilisateur : <strong>1 Gb/s</strong></li>
+            <li>Demandes utilisateurs suivies dans <strong>GLPI</strong></li>
+          </ul>
+        </article>
+
+        <article class="card span-12">
+          <h3>Les acteurs</h3>
+          <ul class="clean-list">
+            <li><strong>L'utilisateur</strong> — a signalé la lenteur de son poste par un ticket</li>
+            <li><strong>Moi (alternante)</strong> — diagnostic, remplacement des câbles accessibles, audit et rapport</li>
+            <li><strong>Mon tuteur</strong> — m'a confié la mission et reçoit le rapport</li>
+            <li><strong>Le prestataire de câblage</strong> — intervient sur les câbles situés dans les murs</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · BESOIN -->
+  <section class="section" id="besoin">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <div><h2>Expression du besoin</h2><p>Le problème à résoudre.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Demande initiale</h3>
+          <p>
+            Un utilisateur ouvre un ticket dans GLPI : son PC est <strong>beaucoup trop lent</strong>
+            pour travailler normalement. Il faut trouver l'origine du problème et le résoudre.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Demande élargie</h3>
+          <p>
+            Après la résolution de ce ticket, mon tuteur me demande de <strong>repérer tous les
+            postes lents</strong> du site, de vérifier pour chacun s'il s'agit d'un problème
+            physique (câble ancien) ou d'une autre cause, et de rédiger un <strong>rapport</strong>.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · RÉPONSE AU BESOIN -->
+  <section class="section" id="reponse">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div><h2>Réponse au besoin</h2><p>Démarche, justification, étapes, tests et résultat.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <h3>Démarche : diagnostic par élimination le long de la chaîne de connexion</h3>
+          <p>
+            Un poste passe par plusieurs équipements avant d'atteindre le switch. J'ai vérifié
+            chaque maillon dans l'ordre pour localiser le problème. La partie située dans les
+            murs ne relève pas de mon périmètre : elle est confiée au prestataire de câblage.
+          </p>
+
+          <div class="chain" role="img" aria-label="Chaîne de connexion : PC, station d'accueil, téléphone IP, prise murale, rocade, switch">
+            <div class="zone me">
+              <span class="zone-label">Côté utilisateur · j'interviens</span>
+              <div class="node">PC</div>
+              <span class="arrow">→</span>
+              <div class="node">Station d'accueil</div>
+              <span class="arrow">→</span>
+              <div class="node">Téléphone IP</div>
+              <span class="arrow">→</span>
+              <div class="node">Prise murale</div>
+            </div>
+            <div class="zone ext">
+              <span class="zone-label">Dans les murs · prestataire</span>
+              <div class="node">Rocade<small>câblage</small></div>
+              <span class="arrow">→</span>
+              <div class="node">Switch<small>local technique</small></div>
+            </div>
+          </div>
+          <p class="muted">Schéma de la chaîne de connexion d'un poste — réalisé par moi.</p>
+        </article>
+
+        <article class="card">
+          <h3>Pourquoi cette solution</h3>
+          <ul class="clean-list">
+            <li>
+              <strong>Le débit négocié est l'indicateur le plus fiable.</strong> Un poste doit
+              être à 1 Gb/s. S'il est à 100 Mb/s ou 10 Mb/s, la cause est très probablement physique.
+            </li>
+            <li>
+              <strong>Le Gigabit Ethernet utilise les 4 paires du câble.</strong> Un câble
+              Cat 5 ancien, abîmé ou mal serti ne garantit pas ce débit : la carte réseau et le
+              switch se replient alors sur un débit plus faible.
+            </li>
+            <li>
+              <strong>HPE IMC affiche le débit de toutes les interfaces des switchs</strong>
+              depuis un seul poste : inutile de passer à chaque bureau pour repérer les postes lents.
+            </li>
+            <li>
+              <strong>Respect du périmètre :</strong> je remplace les câbles accessibles ; ceux
+              situés dans les murs sont signalés au prestataire de câblage.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Étapes — résolution du ticket</h3>
+          <ol class="steps">
+            <li><strong>Prise en charge du ticket</strong>Lecture de la demande dans GLPI et contact avec l'utilisateur.</li>
+            <li><strong>Vérification du débit</strong>Dans les paramètres réseau de Windows, la vitesse de liaison Ethernet est inférieure à 1 Gb/s.</li>
+            <li><strong>Contrôle de la chaîne</strong>Vérification de chaque câble entre le PC, la station d'accueil, le téléphone et la prise murale.</li>
+            <li><strong>Cause identifiée</strong>Un câble de catégorie 5, trop ancien pour garantir 1 Gb/s.</li>
+            <li><strong>Remplacement</strong>Fabrication d'un câble Cat 6 (sertissage des connecteurs RJ45) et remplacement de l'ancien câble.</li>
+          </ol>
+        </article>
+
+        <article class="card span-12">
+          <h3>Étapes — audit de tous les postes lents</h3>
+          <ol class="steps">
+            <li><strong>Repérage dans HPE IMC</strong>Consultation des interfaces des switchs pour repérer celles dont le débit négocié est inférieur à 1 Gb/s (100 Mb/s ou 10 Mb/s).</li>
+            <li><strong>Vérification de chaque poste repéré</strong>Contrôle de la chaîne de connexion pour déterminer si la cause est physique ou non.</li>
+            <li><strong>Action selon la cause</strong>Câble accessible : remplacement par un câble Cat 6. Câble dans les murs : signalement au prestataire de câblage. Autre cause : analyse complémentaire.</li>
+            <li><strong>Rapport</strong>Consignation de chaque poste, de son débit, de la cause et de l'action dans un rapport Excel destiné à mon tuteur.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>Tests réalisés</h3>
+          <ul class="clean-list">
+            <li>Après remplacement du câble, la vitesse de liaison affichée dans les paramètres réseau de Windows est bien de <strong>1 Gb/s</strong>.</li>
+            <li>L'utilisateur confirme que son poste n'est plus lent ; le ticket est clôturé dans GLPI.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Résultat</h3>
+          <p>
+            Le poste de l'utilisateur fonctionne de nouveau normalement. L'audit permet à
+            l'équipe de savoir quels postes sont pénalisés par le câblage et lesquels
+            nécessitent une autre analyse.
+          </p>
+          <p class="muted">L'audit est toujours en cours : les chiffres ci-dessous seront mis à jour.</p>
+        </article>
+      </div>
+
+      <div class="stats" style="margin-top:16px;">
+        <div class="stat"><div class="num">20</div><div class="lbl">postes lents analysés</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">dus à un câble ancien ou défectueux</div></div>
+        <div class="stat"><div class="num">15</div><div class="lbl">autres causes, en cours d'analyse</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · COMPÉTENCES -->
+  <section class="section" id="competences">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <div><h2>Compétences mobilisées</h2><p>Bloc 1 — Support et mise à disposition de services informatiques.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="comp">
+            <div class="comp-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+            <ul>
+              <li>Collecter, suivre et orienter des demandes — ticket GLPI, orientation vers le prestataire</li>
+              <li>Traiter des demandes concernant les services réseau et système — diagnostic du débit</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="comp">
+            <div class="comp-title">Gérer le patrimoine informatique</div>
+            <ul>
+              <li>Recenser et identifier les ressources numériques — audit des interfaces dans IMC</li>
+              <li>Exploiter des référentiels, normes et standards — catégories de câbles, sertissage RJ45</li>
+              <li>Vérifier les conditions de la continuité d'un service informatique</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PREUVES -->
+  <section class="section" id="preuves">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <div><h2>Preuves</h2><p>Documents produits pendant la mission.</p></div>
+      </div>
+
+      <p class="note" style="margin:0 0 16px;">
+        Pour des raisons de confidentialité, l'entreprise interdit les photos et les captures
+        d'écran de son réseau. Les preuves présentées ici sont des documents que j'ai produits
+        moi-même, anonymisés.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Schéma de la chaîne de connexion</h3>
+          <p>Voir la section <a class="link" href="#reponse"><strong>Réponse au besoin</strong></a> : les maillons vérifiés et la limite de mon périmètre.</p>
+        </article>
+        <article class="card">
+          <h3>Méthode de diagnostic</h3>
+          <p>Les étapes détaillées ci-dessus constituent ma procédure de diagnostic d'un poste lent, réutilisable pour chaque nouveau ticket.</p>
+        </article>
+        <article class="card span-12">
+          <h3>Structure du rapport d'audit (Excel)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Poste</th><th>Switch / port</th><th>Débit négocié</th><th>Cause identifiée</th><th>Action</th><th>Statut</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nom du poste (anonymisé)</td>
+                  <td>Interface relevée dans IMC</td>
+                  <td>Débit constaté</td>
+                  <td>Câble / autre</td>
+                  <td>Remplacé / prestataire / analyse</td>
+                  <td>Fait / en cours</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BILAN -->
+  <section class="section" id="bilan">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <div><h2>Bilan</h2><p>Ce que cette mission m'a appris.</p></div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <ul class="clean-list">
+            <li>Une méthode de diagnostic <strong>par élimination</strong>, maillon par maillon, plutôt que de remplacer du matériel au hasard.</li>
+            <li>Lire et interpréter le <strong>débit négocié</strong> d'une interface, sur le poste comme dans l'outil de supervision.</li>
+            <li>Passer d'un incident isolé à une <strong>analyse globale</strong> du parc, documentée dans un rapport.</li>
+            <li>Connaître les <strong>limites de mon périmètre</strong> et orienter vers le bon intervenant.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pager" style="margin-top:24px;">
+        <a class="btn" href="index.html#e5">← Toutes les réalisations</a>
+        <a class="btn btn-primary" href="e5-2.html">Réalisation 2 →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 · Elena Zivojnov · <a href="mentions-legales.html">Mentions légales</a></span>
+    <span>elenazivojnov@gmail.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
