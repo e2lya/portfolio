@@ -83,9 +83,9 @@
           <h3>Les acteurs</h3>
           <ul class="clean-list">
             <li><strong>L'utilisateur</strong> — a signalé la lenteur de son poste par un ticket</li>
-            <li><strong>Moi (alternante)</strong> — diagnostic, remplacement des câbles accessibles, audit et rapport</li>
+            <li><strong>Moi (alternante)</strong> — diagnostic, remplacement des câbles côté poste, audit et rapport</li>
             <li><strong>Mon tuteur</strong> — m'a confié la mission et reçoit le rapport</li>
-            <li><strong>Le prestataire de câblage</strong> — intervient sur les câbles situés dans les murs</li>
+            <li><strong>Le prestataire de câblage</strong> — intervient sur les prises murales et la rocade</li>
           </ul>
         </article>
       </div>
@@ -133,11 +133,11 @@
           <h3>Démarche : diagnostic par élimination le long de la chaîne de connexion</h3>
           <p>
             Un poste passe par plusieurs équipements avant d'atteindre le switch. J'ai vérifié
-            chaque maillon dans l'ordre pour localiser le problème. La partie située dans les
-            murs ne relève pas de mon périmètre : elle est confiée au prestataire de câblage.
+            chaque maillon dans l'ordre pour localiser le problème. La prise murale et la rocade
+            ne relèvent pas de mon périmètre : elles sont confiées au prestataire de câblage.
           </p>
 
-          <div class="chain" role="img" aria-label="Chaîne de connexion : PC, station d'accueil, téléphone IP, prise murale, rocade, switch">
+          <div class="chain" role="img" aria-label="Chaîne de connexion : PC, station d'accueil et téléphone IP côté utilisateur ; prise murale et rocade gérées par le prestataire ; switch dans le local technique">
             <div class="zone me">
               <span class="zone-label">Côté utilisateur · j'interviens</span>
               <div class="node">PC</div>
@@ -145,13 +145,17 @@
               <div class="node">Station d'accueil</div>
               <span class="arrow">→</span>
               <div class="node">Téléphone IP</div>
-              <span class="arrow">→</span>
-              <div class="node">Prise murale</div>
             </div>
+            <span class="arrow" style="align-self:center; padding:0 8px;">→</span>
             <div class="zone ext">
-              <span class="zone-label">Dans les murs · prestataire</span>
-              <div class="node">Rocade<small>câblage</small></div>
+              <span class="zone-label">Prestataire de câblage</span>
+              <div class="node">Prise murale</div>
               <span class="arrow">→</span>
+              <div class="node">Rocade<small>dans les murs</small></div>
+            </div>
+            <span class="arrow" style="align-self:center; padding:0 8px;">→</span>
+            <div class="zone me">
+              <span class="zone-label">Équipe réseau</span>
               <div class="node">Switch<small>local technique</small></div>
             </div>
           </div>
@@ -175,8 +179,8 @@
               depuis un seul poste : inutile de passer à chaque bureau pour repérer les postes lents.
             </li>
             <li>
-              <strong>Respect du périmètre :</strong> je remplace les câbles accessibles ; ceux
-              situés dans les murs sont signalés au prestataire de câblage.
+              <strong>Respect du périmètre :</strong> je remplace les câbles côté poste ; un
+              problème sur la prise murale ou la rocade est signalé au prestataire de câblage.
             </li>
           </ul>
         </article>
@@ -186,7 +190,7 @@
           <ol class="steps">
             <li><strong>Prise en charge du ticket</strong>Lecture de la demande dans GLPI et contact avec l'utilisateur.</li>
             <li><strong>Vérification du débit</strong>Dans les paramètres réseau de Windows, la vitesse de liaison Ethernet est inférieure à 1 Gb/s.</li>
-            <li><strong>Contrôle de la chaîne</strong>Vérification de chaque câble entre le PC, la station d'accueil, le téléphone et la prise murale.</li>
+            <li><strong>Contrôle de la chaîne</strong>Vérification de chaque câble entre le PC, la station d'accueil et le téléphone IP.</li>
             <li><strong>Cause identifiée</strong>Un câble de catégorie 5, trop ancien pour garantir 1 Gb/s.</li>
             <li><strong>Remplacement</strong>Fabrication d'un câble Cat 6 (sertissage des connecteurs RJ45) et remplacement de l'ancien câble.</li>
           </ol>
@@ -197,7 +201,7 @@
           <ol class="steps">
             <li><strong>Repérage dans HPE IMC</strong>Consultation des interfaces des switchs pour repérer celles dont le débit négocié est inférieur à 1 Gb/s (100 Mb/s ou 10 Mb/s).</li>
             <li><strong>Vérification de chaque poste repéré</strong>Contrôle de la chaîne de connexion pour déterminer si la cause est physique ou non.</li>
-            <li><strong>Action selon la cause</strong>Câble accessible : remplacement par un câble Cat 6. Câble dans les murs : signalement au prestataire de câblage. Autre cause : analyse complémentaire.</li>
+            <li><strong>Action selon la cause</strong>Câble côté poste : remplacement par un câble Cat 6. Prise murale ou rocade : signalement au prestataire de câblage. Autre cause : analyse complémentaire.</li>
             <li><strong>Rapport</strong>Consignation de chaque poste, de son débit, de la cause et de l'action dans un rapport Excel destiné à mon tuteur.</li>
           </ol>
         </article>
